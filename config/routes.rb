@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   put '/movies/deletemovie(.:format)' => 'movies#delete_mov'
   
   get 'movies/updatemov' => 'movies#updatemov'
+  put '/movies/updatemov(.:format)' => 'movies#update_mov'
 
   
   # Example of regular route:
