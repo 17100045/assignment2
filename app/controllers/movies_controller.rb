@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    #@movie = Movie.find params[:id]
+    @movie = Movie.find params[:id]
     #if((movie_params[:title]).blank? || movie_params[:release_date].blank? || movie_params[:rating].blank?)
     #  flash[:notice] = "error fields empty"
     #  redirect_to movies_path
@@ -98,8 +98,8 @@ class MoviesController < ApplicationController
       @movies.all.each do |i|
         i.destroy
       redirect_to movies_path
+      return
     end
-    return
     elsif !((args[:title]).blank?)
       @movie = Movie.find_by_title(args[:title])
       flash[:notice] = "Movie '#{@movie.title}' deleted."
